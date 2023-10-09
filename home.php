@@ -42,19 +42,19 @@
           <div class="collapse navbar-collapse" id="nav-principal">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a href="" class="nav-link">Home</a>
+                <a href="home.php" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">Sobre nos</a>
+                <a href="pesquisa.php" class="nav-link">Pesquisar</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">Faq</a>
+                <a href="adicionar.php" class="nav-link">Adicionar</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">Agenda</a>
+                <a href="consultar.php" class="nav-link">consultar</a>
               </li>
               <li class="nav-item">
-                <a href="" class="btn btn-outline-dark ml-4">Orçamento</a>
+                <a href="consultar.php" class="btn btn-outline-dark ml-4">Editar</a>
               </li>
             </ul>
           </div>
@@ -69,16 +69,14 @@
             <div id="caixa-conteudo" class="row " style="background-color: aliceblue;">
                     <div class=" col-md-6 ">
                       <div class="align-self-center m-3">
-                        <h1 class="display-4">Crie uma </br> Memoria </br><span style="color:blue;">Brincante</span></h1>
+                        <h2 class="display-4">NUTRIKIDS</br>2023</br><span style="color:blue;">ATENAS</span></h2>
           
-                        <p class="my-4" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                          Accusamus dolores magni soluta sapiente reiciendis tempora totam, 
-                          sed fugit consectetur sit similique consequuntur ducimus, mollitia 
-                          voluptatum? Autem iure et dolore o</p>
+                        <p class="my-4" >O projeto de extensão “NUTRIKIDS”, desenvolvido por acadêmicos do 2º período de medicina da faculdade Atenas Passos, visa acompanhar o desenvolvimento nutricional de crianças, através da mensuração das medidas antropométricas (altura,
+peso, circunferência abdominal e IMC) e do acompanhamento do cartão vacinal.</p>
                           
-                        <div class="container p-0">
+<div class="container p-0">
                           <a href="" class="btn btn-primary text-center my-1 px-4" style="color: white;">Veja mais <i class="fa-solid fa-caret-down d-block"></i></a>
-                          <p class="d-inline">Prova social</p>
+                          <p class="d-inline"></p>
                           <span class=""></span>
                         </div>
                        
@@ -101,21 +99,21 @@
           <div class="col-md-3" style=" border-radius: 25px;border: 3px solid #73AD21;padding: 25px;width: 100%;margin: 5px;height: auto;">
                 <h3 class="">Clique no botão abaixo para pesquisar a criança desejada.</h3>
                 <div class="justify-content-center d-flex">
-                <a><button class="btn btn-primary px-6 my-2">Pesquisa</button></a>
+                <a href="pesquisa.php"><button class="btn btn-primary btn-lg">Pesquisa</button></a>
                 </div>
             </div>
 
             <div class="col-md-3" style=" border-radius: 25px;border: 3px solid #73AD21;padding: 25px;width: 100%;margin: 5px;height: auto;">
                 <h4 class="">Clique no botão abaixo para adicionar informações nutricionais de um paciente.</h4>
                 <div class="justify-content-center d-flex">
-                <a><button class="btn btn-primary px-6 my-2">Adicionar</button></a>
+                <a href="adicionar.php"><button class="btn btn-primary btn-lg">Adicionar</button></a>
                 </div>
             </div>
 
             <div class="col-md-3" style=" border-radius: 25px;border: 3px solid #73AD21;padding: 25px;width: 100%;margin: 5px;height: auto;">
                 <h4 class="">Clique no botão abaixo para consultar as informações nutricionais de todos os pacientes.</h4>
                 <div class="justify-content-center d-flex">
-                <a><button class="btn btn-primary px-6 my-2">Consultar</button></a>
+                <a href="consultar.php"><button class="btn btn-primary btn-lg">Consultar</button></a>
                 </div>
             </div>
             </div>

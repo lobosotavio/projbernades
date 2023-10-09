@@ -1,4 +1,5 @@
 <?php
+
 include('conexao.php');
 
 if(isset($_POST['email']) || isset($_POST['senha'])) {
@@ -32,7 +33,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
 
-            header("Location: painel.php");
+            header("Location: home.php");
 
         } 
         else if(strlen($_POST['email']) != 0 AND $quantidade != 1){
@@ -44,7 +45,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
