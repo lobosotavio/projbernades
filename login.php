@@ -1,4 +1,5 @@
 <?php
+
 include('conexao.php');
 
 if(isset($_POST['email']) || isset($_POST['senha'])) {
@@ -32,7 +33,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
 
-            header("Location: painel.php");
+            header("Location: home.php");
 
         } 
         else if(strlen($_POST['email']) != 0 AND $quantidade != 1){
@@ -44,7 +45,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -68,7 +69,6 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
                   <input type="password" name="senha" id="" class="form-control my-4 py-2" placeholder="Senha" />
                   <div class="text-center mt-3">
                     <button class="btn btn-primary">Login</button>
-                    <a href="#" class="nav-link">nao tem uma conta?</a>
                   </div>
                 </form>
               </div>
@@ -82,4 +82,3 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </body>
 </html>
-

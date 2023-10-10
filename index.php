@@ -7,7 +7,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         echo "Preencha seu e-mail";
     } 
     if(strlen($_POST['email']) == 0  AND strlen($_POST['senha']) == 0){
-        echo " \r\n e preencha sua senha";
+        echo " e preencha sua senha";
     }
     else if(strlen($_POST['senha']) == 0) {
         echo "Preencha sua senha";
