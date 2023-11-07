@@ -1,5 +1,5 @@
 <?php 
-    
+    include('protect.php');
     
       $usuario = "root";
       $senha = "";
@@ -9,8 +9,8 @@
 
       $con = mysqli_connect($host, $usuario, $senha, $database) or die("Erro de conexão");
 
-      if(isset($_POST['update'])){
-         $escola = $_POST['escola'];
+      if(isset($_POST['delete'])){
+
          $id = $_POST['id'];
          $imc = $_POST['imc'];
          $peso = $_POST['peso'];
@@ -18,19 +18,11 @@
          $Circunferencia_abdominal = $_POST['Circunferencia_abdominal'];
          $idade = $_POST['idade'];
          $sexo = $_POST['sexo'];
-         
+         $escola = $_POST['escola'];
 
 
-         $query = mysqli_query($con, "UPDATE informacoes 
-         SET escola = '$escola',
-            imc = '$imc',
-            peso = '$peso', 
-            altura = '$altura', 
-            Circunferencia_abdominal = '$Circunferencia_abdominal', 
-            idade = '$idade', 
-            sexo = '$sexo' 
-            
-         WHERE id='$id'");
+         $query = mysqli_query($con, "DELETE from informacoes
+         WHERE id = '$id'");
          
      }
      header('location: editar.php');

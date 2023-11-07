@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <!DOCTYPE html>
@@ -31,8 +31,8 @@
         
         <div class="container">
           
-          <a href="#" class="navbar-brand">
-           logo
+          <a href="logout.php" class="navbar-brand">
+            <button class="btn btn-primary">SAIR</button>
           </a>
 
           <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
@@ -51,10 +51,13 @@
                 <a href="adicionar.php" class="nav-link">Adicionar</a>
               </li>
               <li class="nav-item">
-                <a href="consultar.php" class="nav-link">consultar</a>
+                <a href="consultar.php" class="nav-link">Consultar</a>
               </li>
               <li class="nav-item">
-                <a href="editar.php" class="btn btn-outline-dark ml-4">Editar</a>
+                <a href="editar.php" class="nav-link">Editar</a>
+              </li>
+              <li class="nav-item">
+                <a href="login.php" class="btn btn-outline-dark ml-4">Login</a>
               </li>
             </ul>
           </div>
@@ -66,7 +69,7 @@
     <section><!--hero section-->
         <main class="mt-2">
             <div class="container">
-            <div id="caixa-conteudo" class="row " style="background-color: aliceblue;">
+            <div id="caixa-conteudo" class="row " style="background-color: aliceblue; border-radius: 25px;">
                     <div class=" col-md-6 ">
                       <div class="align-self-center m-3">
                         <h2 class="display-4">NUTRIKIDS</br>2023</br><span style="color:blue;">ATENAS</span></h2>
@@ -75,7 +78,7 @@
 peso, circunferência abdominal e IMC) e do acompanhamento do cartão vacinal.</p>
                           
 <div class="container p-0">
-                          <a href="" class="btn btn-primary text-center my-1 px-4" style="color: white;">Veja mais <i class="fa-solid fa-caret-down d-block"></i></a>
+                          <a href="#aqui" class="btn btn-primary text-center my-1 px-4" style="color: white;">Veja mais <i class="fa-solid fa-caret-down d-block"></i></a>
                           <p class="d-inline"></p>
                           <span class=""></span>
                         </div>
@@ -90,27 +93,28 @@ peso, circunferência abdominal e IMC) e do acompanhamento do cartão vacinal.</
     </section><!--fim hero section-->
 
     
-    <section class=" mb-5"><!--nossas propostas-->
-        <div class="container-fluid text-center mt-3 mb-5"><h1 class="display-4">MENU
+    <section class=" my-5"><!--nossas propostas-->
+        <div class="container-fluid text-center mt-3 mb-5">
+          <h1 class="display-4 mb-4">MENU</h1>
 
         <div class="container-fluid d-flex ">
             <div class="row justify-content-center">
 
           <div class="col-md-3" style=" border-radius: 25px;border: 3px solid #73AD21;padding: 25px;width: 100%;margin: 5px;height: auto;">
-                <h3 class="">Clique no botão abaixo para pesquisar a criança desejada.</h3>
+                <h4 class="mb-4">Clique no botão abaixo para pesquisar a criança desejada.</h3>
                 <div class="justify-content-center d-flex">
-                <a href="pesquisa.php"><button class="btn btn-primary btn-lg">Pesquisa</button></a>
+                <a href="pesquisa.php"><button class="btn btn-primary btn-lg mt-5">Pesquisa</button></a>
                 </div>
             </div>
 
             <div class="col-md-3" style=" border-radius: 25px;border: 3px solid #73AD21;padding: 25px;width: 100%;margin: 5px;height: auto;">
                 <h4 class="">Clique no botão abaixo para adicionar informações nutricionais de um paciente.</h4>
                 <div class="justify-content-center d-flex">
-                <a href="adicionar.php"><button class="btn btn-primary btn-lg">Adicionar</button></a>
+                <a href="adicionar.php"><button class="btn btn-primary btn-lg mt-4">Adicionar</button></a>
                 </div>
             </div>
 
-            <div class="col-md-3" style=" border-radius: 25px;border: 3px solid #73AD21;padding: 25px;width: 100%;margin: 5px;height: auto;">
+            <div class="col-md-3 " style=" font-size:20px ; border-radius: 25px;border: 3px solid #73AD21;padding: 25px;width: 100%;margin: 5px;height: auto;">
                 <h4 class="">Clique no botão abaixo para consultar as informações nutricionais de todos os pacientes.</h4>
                 <div class="justify-content-center d-flex">
                 <a href="consultar.php"><button class="btn btn-primary btn-lg">Consultar</button></a>
@@ -120,12 +124,34 @@ peso, circunferência abdominal e IMC) e do acompanhamento do cartão vacinal.</
         </div>
     </section><!--fim MENU-->
 
-    <section>
-        <div>
-            <h1>conclusão </h1>
-        </div>
-    </section>
-  
+    <section class="mt-5 " id="aqui"><!--hero section-->
+        <main class="mt-5 ">
+          
+            <div class="container">
+            <div id="caixa-conteudo" class="row py-4" style="background-color: aliceblue; border-radius: 25px;">
+            <div class="d-flex justify-content-around">
+                    <div class=" col-md-6 ">
+                      <div class=" m-3 ">
+                        <h2 class="display-4">NUTRIKIDS 2023</br><span class="align-self-center" style="color:blue;">ATENAS</span></h2>
+                    </div>        
+                    </div>
+
+                      <div class="">
+                      <p class="my-4" >O projeto de extensão “NUTRIKIDS”, desenvolvido por acadêmicos do 2º período de medicina da faculdade Atenas Passos, visa acompanhar o desenvolvimento nutricional de crianças, através da mensuração das medidas antropométricas (altura,
+                        peso, circunferência abdominal e IMC) e do acompanhamento do cartão vacinal.. Por
+                        meio desse seguimento, é possível identificar crescimentos fora da faixa saudável – tais
+                        como o sobrepeso e a desnutrição – e assegurar que os jovens estejam sendo vacinados conforme a idade. O projeto intenta, portanto, evitar que doenças de base, como a
+                        diabetes e a hipertensão, desenvolvam-se e, evitar que doenças infectocontagiosas, tal
+                        qual a poliomielite, ressurjam.</p>
+                        <p>Pelo intermédio deste site, será possível organizar os dados e acompanhar, de
+                        maneira elucidativa, os resultados. Ademais, espera-se que essa ferramenta sirva de
+                        inspiração e de suporte para que esse modelo de assessoria seja gradativamente difundido entre os educadores e os profissionais de saúde.</p>
+                      </div>
+
+                      
+          
+        </main>
+    </section><!--fim hero section-->
     
     <footer class="mt-4 mb-4 " style="border-top: black 1px solid;">
         <div class="container">

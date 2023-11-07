@@ -2,56 +2,32 @@
 
 include('conexao.php');
 
-if(isset($_POST['email']) || isset($_POST['senha'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = mysqli_real_escape_string($mysqli, $_POST['nome']);
+    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-    if(strlen($_POST['email']) == 0) {
-        echo "Preencha seu e-mail";
-    } 
-    if(strlen($_POST['email']) == 0  AND strlen($_POST['senha']) == 0){
-        echo " \r\n e preencha sua senha";
-    }
-    else if(strlen($_POST['senha']) == 0) {
-        echo "Preencha sua senha";
+    $query = "INSERT INTO usuarios (nome, email, senha) VALUES(?, ?, ?)";
+    
+    $stmt = $mysqli->prepare($query);
+    $stmt->bind_param('sss', $nome, $email, $senha);
+
+    if ($stmt->execute()) {
+        // Inserção bem-sucedida
+        echo "Cadastro realizado com sucesso!";
     } else {
-
-
-      
-
-
-
-        $email = $mysqli->real_escape_string($_POST['email']);
-        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-
-        $sql_code = "SELECT * FROM usuarios WHERE email = '$email'";
-        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-        $quantidade = $sql_query->num_rows;
-
-        if($quantidade == 1) {
-            
-            $usuario = $sql_query->fetch_assoc();
-            if(password_verify($senha,$usuario['senha'])){
-              echo"logado";
-            
-            }
-            if(!isset($_SESSION)) {
-                session_start();
-            }
-
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['nome'] = $usuario['nome'];
-
-            header("Location: home.php");
-
-        } 
-        else if(strlen($_POST['email']) != 0 AND $quantidade != 1){
-            echo "Falha ao logar! E-mail ou senha incorretos";
-        }
-
+        // Tratamento de erro
+        echo "Erro ao cadastrar. Por favor, tente novamente.";
     }
 
+    $stmt->close();
+    $mysqli->close();
 }
+
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -62,7 +38,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 
-    <title>Login</title>
+    <title>Cadastro</title>
   </head>
   <body>
     <section>
@@ -71,22 +47,17 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
           <div class="col-12 col-sm-7 col-md-6 m-auto "><!--responsividade-->
             <div class="card border-0 shadow" style="border-radius: 25px;"><!--sombra e canto redondo-->
               <div class="card-body m-4"><!--tamanho da caixa-->
-                <h1 class="d-flex justify-content-center">Faça seu login</h1><!--centraliza o texto no meio-->
+                <h1 class="d-flex justify-content-center">Faça seu cadastro</h1><!--centraliza o texto no meio-->
                 <form action="" method="POST">
+                  <input type="text" name="nome" id="" class="form-control my-4 py-2" placeholder="Nome Completo" />
                   <input type="text" name="email" id="" class="form-control my-4 py-2" placeholder="Usuário" />
                   <input type="password" name="senha" id="" class="form-control my-4 py-2" placeholder="Senha" />
                   <div class="text-center mt-3">
-                    <button class="btn btn-primary">Login</button>
+                    <button class="btn btn-primary">Cadastrar</button>
                   </div>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <ul class="nav">
-                      <li class="">
-                        <a href="cadastro.php" class="nav-link">Não possui conta? Clique aqui para se cadastrar</a>
-                      </li>
-                    </ul>
-                  </div>
+                  
                 </form>
-                  <div class="text-center mt-1">
+                  <div class="text-center mt-3">
                     <button class="btn btn" style= "border-color:blue; background-color:white" type="submit">
                       <a href="home.php">  
                         <i class="bi bi-house"></i>
@@ -95,7 +66,9 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
                         </svg>
                       </a>
                     </button>
-
+                    <a href="login.php">    
+                      <button class="btn btn " style="background-color:black; border-color:white; color:white" >Voltar</button>
+                    </a>
                   </div>
               </div>
             </div>
